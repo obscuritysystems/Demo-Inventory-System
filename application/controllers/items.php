@@ -10,7 +10,7 @@ class Items extends REST_Controller {
     */
     public function __construct(){
             parent::__construct();
-            error_reporting(E_ALL);
+           // error_reporting(E_ALL);
             //load item model to manage items
             $this->load->model('items_model');
     }
@@ -126,7 +126,7 @@ class Items extends REST_Controller {
 
         //if we have any errors in validating fields return error messages
         if(sizeof($errors) > 0){
-               //$this->response($errors,200);
+               $this->response($errors,200);
         }else{// if we don't have any errors create the item
 
                 if(sizeof($data) < 2){
@@ -162,8 +162,7 @@ class Items extends REST_Controller {
        $errors = $this->_validate_input($detail_restrictions,array('id' => $id));
         // NOTE: I should spend some time abstracting this
        if(sizeof($errors) > 0){
-            print_r($errors);
-             //$this->response($errors,200);
+             $this->response($errors,200);
         }else{
                 $response = array();
                 if($this->items_model->delete_item($id)){
@@ -171,8 +170,7 @@ class Items extends REST_Controller {
                 }else{
                     $response = array('status' => '200','message'=> 'Item does not exists');
                 }
-                print_r($response);
-               //$this->response($response, 200);
+               $this->response($response, 200);
             }
        }
 
