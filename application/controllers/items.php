@@ -205,8 +205,8 @@ class Items extends REST_Controller {
                 if($field['type'] == 'str') {
                    if(strlen($data[$field['name']]) > $field['length']){
                          $errors[$field['name']][] = array('Error - the length of  '.
-                                    $field. 'is set to '. $field['length'].
-                                    'size was '. strlen($data[$field['name']]));
+                                    $field. 'is to long the max length is set to '. $field['length'].
+                                    'length was '. strlen($data[$field['name']]));
                    }
                 }
 
