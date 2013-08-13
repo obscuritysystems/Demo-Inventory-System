@@ -6,7 +6,7 @@ class Items extends REST_Controller {
     
 
     /*
-        setups up rest interface 
+        setup rest interface 
     */
     public function __construct(){
             parent::__construct();
